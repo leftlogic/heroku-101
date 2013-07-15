@@ -154,6 +154,8 @@ Next we have to tell Heroku about our web process. Create a file called `Procfil
 web: node server.js
 ```
 
+(As a shortcut, you can use: `echo "web: node server.js" > Procfile`)
+
 Heroku now knows that the process `web` should be run with `node server.js`.
 
 Lastly, before we put it live, we need to commit the changes. Remember I said Heroku was tightly integrated with Git? Heroku does deployments with `git push`, so you need to have everything you want to deploy committed.
