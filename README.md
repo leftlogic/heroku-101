@@ -89,6 +89,31 @@ And that's it, you're good to go.
 
 ## Create the Heroku app
 
+Next we'll use the Heroku toolbelt to create an app. But first, a little about Heroku...
+
+Apps, on Heroku, are made up of your code, plus some configuration data that tells Heroku how to run your code. This configuration is split across two files: the `package.json` and the `Procfile`.
+
+The `package.json` contains your apps dependencies (other modules), as well as metadata about the module, including its name, version and author. This file is also used to inform other Node modules how to use your module, or (as with Heroku) what to install to get the app running, and what versions of Node and `npm` to use.
+
+A `package.json` file is used across nearly all Node modules and is the standard for making Node modules work together.
+
+The `Procfile` is Heroku specific, allowing you to specifiy the processes associated with your app. In our case, it will just be the web server, but you can also specify workers and one-time-tasks.
+
+We'll get both files set up in moment.
+
+Apps on Heroku get their own subdomain of `herokuapp.com`, so you don't need to work about hosting or domain management. When you're ready, you can use a custom domain, but for now we don't need to.
+
+To create the app, run the following:
+
+```shell
+$ heroku apps:create
+Creating your-app-1234... done, stack is cedar
+http://your-app-1234.herokuapp.com/ | git@heroku.com:your-app-1234.git
+Git remote heroku added
+```
+
+And that's it! You've got a new app on Heroku with a randomly generated name. Head to the URL it gave you to see it the Heroku placeholder page.
+
 ## Getting your code ready for Heroku
 
 ## Pushing
