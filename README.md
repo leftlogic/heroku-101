@@ -38,7 +38,7 @@ For this tutorial you won't need a credit card attached to your account.
 
 Lastly, before we get writing code, get yourself the [Heroku Toolbelt](https://toolbelt.heroku.com/). It lets you interact with Heroku from the terminal, and is the way we'll get everything set up.
 
-## Create your server
+## Create the server
 
 So, time to build ourselves a web server. Create a new directory, and in it create a file called `server.js`.
 
