@@ -34,9 +34,9 @@ Next you'll need to [create a Heroku account.](http://id.heroku.com/signup)
 
 For this tutorial you won't need a credit card attached to your account.
 
-## Get the Heroku toolbelk
+## Get the Heroku toolbelt
 
-Lastly, before we get writing code, get yourself the [Heroku Toolbelt](https://toolbelt.heroku.com/). It lets you interact with Heroku from the terminal, and is the wasy we'll get everything set up.
+Lastly, before we get writing code, get yourself the [Heroku Toolbelt](https://toolbelt.heroku.com/). It lets you interact with Heroku from the terminal, and is the way we'll get everything set up.
 
 ## Create your server
 
@@ -97,7 +97,7 @@ The `package.json` contains your apps dependencies (other modules), as well as m
 
 A `package.json` file is used across nearly all Node modules and is the standard for making Node modules work together.
 
-The `Procfile` is Heroku specific, allowing you to specifiy the processes associated with your app. In our case, it will just be the web server, but you can also specify workers and one-time-tasks.
+The `Procfile` is Heroku specific, allowing you to specify the processes associated with your app. In our case, it will just be the web server, but you can also specify workers and one-time-tasks.
 
 We'll get both files set up in moment.
 
@@ -154,7 +154,7 @@ Next we have to tell Heroku about our web process. Create a file called `Procfil
 web: node server.js
 ```
 
-Lastly, before we put it live, we need to commit the changes. Remember I said Heroku was tightly integrated with Git? Heroku does deployments with `git push`, so you need to have everything you want to deploy commited.
+Lastly, before we put it live, we need to commit the changes. Remember I said Heroku was tightly integrated with Git? Heroku does deployments with `git push`, so you need to have everything you want to deploy committed.
 
 ```shell
 $ git add .
