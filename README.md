@@ -12,7 +12,7 @@ The first step is to make sure you've got Node and npm installed. To do so, head
 
 To test that both are working, open up your terminal and run:
 
-```bash
+```shell
 $ node -v
 v0.x.x
 ```
@@ -21,7 +21,7 @@ You should see some kind of version number come back (mine was `v0.10.13`). If y
 
 To test `npm`, run the following:
 
-```bash
+```shell
 $ npm -v
 0.x.x
 ```
@@ -58,7 +58,7 @@ This is a very basic web server using Node. I won't explain the code here – le
 
 To run the code, navigate to the directory you added to the file to and run the following:
 
-```bash
+```shell
 $ node server.js
 Server running. http://localhost:3000
 ```
@@ -68,6 +68,24 @@ Server running. http://localhost:3000
 Now visit [that URL](http://localhost:3000) to check the server is sending you data. All being well, you'll get a page saying `hello`.
 
 Looking back at your terminal, you should see some logging of your accessing the server.
+
+## Setup git
+
+To get your app running on Heroku, you'll need to setup git in the directory. Heroku is very closely tied into git, as we'll see later.
+
+So, to get git setup, run:
+
+```shell
+$ git init
+Initialized empty Git repository in /Path/to/your/app/.git/
+$ git add -A
+$ git commit -m "Initial commit."
+[master (root-commit) 195866a] Initial commit.
+ 1 file changed, 9 insertions(+)
+ create mode 100644 server.js
+```
+
+And that's it, you're good to go.
 
 ## Create the Heroku app
 
