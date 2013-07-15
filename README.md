@@ -148,7 +148,7 @@ We need to make some changes to it, however. Open it up, and make it match the f
 
 This tells Heroku what version of Node and `npm` to use.
 
-Next we have to tell Heroku about our web process. Create a file called `Procfile`, and the following:
+Next we have to tell Heroku about our web process. Create a file called `Procfile`, and add the following:
 
 ```
 web: node server.js
