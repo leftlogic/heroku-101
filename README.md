@@ -116,4 +116,91 @@ And that's it! You've got a new app on Heroku with a randomly generated name. He
 
 ## Getting your code ready for Heroku
 
-## Pushing
+Next we'll get the web server code ready for Heroku.
+
+We'll use the `npm init` tool to setup the `package.json`. Run the following, and just keep pressing enter.
+
+```shell
+$ npm init
+... lots of stuff here ...
+... keep pressing enter ...
+```
+
+You now have a shiny new `package.json`.
+
+We need to make some changes to it, however. Open it up, and make it match the following (you can leave the `name` alone)... `engines` is the important bit.
+
+```json
+{
+  "name": "your-app-name",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
+```
+
+This will tell Heroku what version of Node and `npm` to use.
+
+Next we have to tell Heroku about our web process. Create a file called `Procfile`, and the following:
+
+```
+web: node server.js
+```
+
+Lastly, before we put it live, we need to commit the changes. Remember I said Heroku was tightly integrated with Git? Heroku does deployments with `git push`, so you need to have everything you want to deploy commited.
+
+```shell
+$ git add .
+$ git commit -m "Setup for Heroku."
+[master 8a2d142] Setup for Heroku.
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Procfile
+ create mode 100644 package.json
+```
+
+And now we're ready to deploy.
+
+## Deployment
+
+Deploying to Heroku is as simple as pushing to the remote it added when the app was created (`heroku app:create` remember?).
+
+When you push, Heroku detect what kind of code you've pushed and sets up the environment accordingly. So here goes...
+
+```shell
+$ git push heroku master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 941 bytes | 0 bytes/s, done.
+Total 7 (delta 0), reused 0 (delta 0)
+
+-----> Node.js app detected
+-----> Resolving engine versions
+       Using Node.js version: 0.10.13
+       Using npm version: 1.2.30
+-----> Fetching Node.js binaries
+-----> Vendoring node into slug
+-----> Installing dependencies with npm
+       Dependencies installed
+-----> Building runtime environment
+-----> Discovering process types
+       Procfile declares types -> web
+
+-----> Compiled slug size: 3.8MB
+-----> Launching... done, v4
+       http://your-app-1234.herokuapp.com deployed to Heroku
+
+To git@heroku.com:your-app-1234.git
+ * [new branch]      master -> master
+```
+
+Visit that URL again and you should have a lovely greeting waiting for you.
+
+Welcome to the world of Node and Heroku.
