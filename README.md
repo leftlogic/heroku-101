@@ -2,7 +2,9 @@
 
 This guide will walk you through building your first Node web server, and deploying it to the world with Heroku.
 
-The guide assumes you have some familiarity with (and access to) a terminal, and you'll need [git](http://git-scm.com/).
+The guide assumes you have some familiarity with (and access to) a terminal, and you'll need [git](http://git-scm.com/). GitHub have a good guide for [setting up git](https://help.github.com/articles/set-up-git).
+
+Windows users: when you install git you'll get a terminal with it that emulates bash – that's the terminal you should use for this guide. The guide hasn't be tested on Windows (I have no access to it) so just ask around if you have problems.
 
 ## Install Node + npm
 
