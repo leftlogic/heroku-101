@@ -112,7 +112,7 @@ http://your-app-1234.herokuapp.com/ | git@heroku.com:your-app-1234.git
 Git remote heroku added
 ```
 
-And that's it! You've got a new app on Heroku with a randomly generated name. Head to the URL it gave you to see it the Heroku placeholder page.
+And that's it! You've got a new app on Heroku with a randomly generated name. Head to the URL it gave you to see the Heroku placeholder page.
 
 ## Getting your code ready for Heroku
 
@@ -128,7 +128,7 @@ $ npm init
 
 You now have a shiny new `package.json`.
 
-We need to make some changes to it, however. Open it up, and make it match the following (you can leave the `name` alone)... `engines` is the important bit.
+We need to make some changes to it, however. Open it up, and make it match the following (you can leave the `name` alone, `engines` is the important bit).
 
 ```json
 {
@@ -146,13 +146,15 @@ We need to make some changes to it, however. Open it up, and make it match the f
 }
 ```
 
-This will tell Heroku what version of Node and `npm` to use.
+This tells Heroku what version of Node and `npm` to use.
 
 Next we have to tell Heroku about our web process. Create a file called `Procfile`, and the following:
 
 ```
 web: node server.js
 ```
+
+Heroku now knows that the process `web` should be run with `node server.js`.
 
 Lastly, before we put it live, we need to commit the changes. Remember I said Heroku was tightly integrated with Git? Heroku does deployments with `git push`, so you need to have everything you want to deploy committed.
 
