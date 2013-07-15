@@ -2,7 +2,7 @@
 
 This guide will walk you through building your first Node web server, and deploying it to the world with Heroku.
 
-The guide assumes you have some familiarity with (and access to) a terminal.
+The guide assumes you have some familiarity with (and access to) a terminal, and you'll need [git](http://git-scm.com/).
 
 ## Install Node + npm
 
@@ -30,10 +30,18 @@ Again, you should get a version number (mine was `1.3.2`). Google or ask about a
 
 ## Create a Heroku account
 
+Next you'll need to [create an Heroku account.](http://id.heroku.com/signup)
+
+For this tutorial you won't need a credit card attached to your account.
+
 ## Get the Heroku toolbelk
+
+Lastly, before we get writing code, get yourself the [Heroku Toolbelt](https://toolbelt.heroku.com/). It lets you interact with Heroku from the terminal, and is the wasy we'll get everything set up.
 
 ## Create your server
 
-## Getting it ready for Heroku
+## Create the Heroku app
+
+## Getting your code ready for Heroku
 
 ## Pushing
