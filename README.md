@@ -91,19 +91,7 @@ And that's it, you're good to go.
 
 ## Create the Heroku app
 
-Next we'll use the Heroku toolbelt to create an app. But first, a little about Heroku...
-
-Apps, on Heroku, are made up of your code, plus some configuration data that tells Heroku how to run your code. This configuration is split across two files: the `package.json` and the `Procfile`.
-
-The `package.json` contains your apps dependencies (other modules), as well as metadata about the module, including its name, version and author. This file is also used to inform other Node modules how to use your module, or (as with Heroku) what to install to get the app running, and what versions of Node and `npm` to use.
-
-A `package.json` file is used across nearly all Node modules and is the standard for making Node modules work together.
-
-The `Procfile` is Heroku specific, allowing you to specify the processes associated with your app. In our case, it will just be the web server, but you can also specify workers and one-time-tasks.
-
-We'll get both files set up in moment.
-
-Apps on Heroku get their own subdomain of `herokuapp.com`, so you don't need to work about hosting or domain management. When you're ready, you can use a custom domain, but for now we don't need to.
+Next we'll use the Heroku toolbelt to create an app.
 
 To create the app, run the following:
 
@@ -120,7 +108,7 @@ And that's it! You've got a new app on Heroku with a randomly generated name. He
 
 Next we'll get the web server code ready for Heroku.
 
-We'll use the `npm init` tool to setup the `package.json`. Run the following, and just keep pressing enter.
+We'll use the `npm init` tool to setup a file called `package.json`. Run the following, and just keep pressing enter.
 
 ```shell
 $ npm init
@@ -128,9 +116,9 @@ $ npm init
 ... keep pressing enter ...
 ```
 
-You now have a shiny new `package.json`.
+You now have a shiny new `package.json`. Heroku uses it to run your code.
 
-We need to make some changes to it, however. Open it up, and make it match the following (you can leave the `name` alone, `engines` is the important bit).
+We need to make some changes to it, however. Open it up, and make it match the following (you can leave the `name` alone, `engines` is the important bit):
 
 ```json
 {
@@ -158,7 +146,7 @@ web: node server.js
 
 (As a shortcut, you can use: `echo "web: node server.js" > Procfile`)
 
-Heroku now knows that the process `web` should be run with `node server.js`.
+Heroku now knows that a process called `web` should be run using `node server.js`.
 
 Lastly, before we put it live, we need to commit the changes. Remember I said Heroku was tightly integrated with Git? Heroku does deployments with `git push`, so you need to have everything you want to deploy committed.
 
@@ -177,7 +165,7 @@ And now we're ready to deploy.
 
 Deploying to Heroku is as simple as pushing to the remote it added when the app was created (`heroku app:create` remember?).
 
-When you push, Heroku detect what kind of code you've pushed and sets up the environment accordingly. So here goes...
+When you push, Heroku detects what kind of code you've pushed and sets up the environment accordingly. So here goes...
 
 ```shell
 $ git push heroku master
@@ -198,7 +186,6 @@ Total 7 (delta 0), reused 0 (delta 0)
 -----> Building runtime environment
 -----> Discovering process types
        Procfile declares types -> web
-
 -----> Compiled slug size: 3.8MB
 -----> Launching... done, v4
        http://your-app-1234.herokuapp.com deployed to Heroku
@@ -207,6 +194,16 @@ To git@heroku.com:your-app-1234.git
  * [new branch]      master -> master
 ```
 
-Visit that URL again and you should have a lovely greeting waiting for you.
+Visit that URL again and you should have a lovely greeting waiting for you. We're done now, but read on for more info about Heroku.
 
-Welcome to the world of Node and Heroku.
+## A little more about Heroku
+
+Apps, on Heroku, are made up of your code, plus some configuration data that tells Heroku how to run your code. This configuration is split across two files: the `package.json` and the `Procfile`.
+
+The `package.json` contains your apps dependencies (other modules), as well as metadata about the module, including its name, version and author. This file is also used to inform other Node modules how to use your module, or (as with Heroku) what to install to get the app running, and what versions of Node and `npm` to use.
+
+A `package.json` file is used across nearly all Node modules and is the standard for making Node modules work together.
+
+The `Procfile` is Heroku specific, allowing you to specify the processes associated with your app. In our case, it will just be the web server, but you can also specify workers and one-time-tasks.
+
+Heroku apps get their own subdomain of `herokuapp.com` so you don't need to work about hosting or domain management. When you're ready, you can use a custom domain, but for now we don't need to.
